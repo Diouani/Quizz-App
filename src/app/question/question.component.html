@@ -13,9 +13,15 @@
         <h5>{{ points }} Points</h5>
       </div>
 
+      <div class="level">
+        <span style="font-style: italic">
+        Niveau :  {{level}}</span
+        >
+      </div>
+
       <div class="question-remain">
         <span style="font-style: italic">
-          Question {{ currentIndex + 1 }} of {{questionList.length}}</span
+          Question {{ currentIndex + 1 }} / {{questionList.length}}</span
         >
       </div>
 
@@ -42,7 +48,7 @@
     </div>
     <div class="options" style="height: 20%">
       <ol class="d-flex" style="flex-wrap: wrap; justify-content: center">
-        <li *ngFor="let option of questionList[currentIndex]?.options"  (click) ="reponse(currentIndex +1 , option)">
+        <li *ngFor="let option of questionList[currentIndex]?.options"  (click) ="reponse(option)">
           <div class="card">{{ option.reponse }}</div>
         </li>
       </ol>
