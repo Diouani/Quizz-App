@@ -1,5 +1,6 @@
 import { QuestionService } from "./../service/question.service";
 import { Component, OnInit } from "@angular/core";
+import { timer } from "rxjs";
 
 @Component({
   selector: "app-question",
@@ -11,13 +12,16 @@ export class QuestionComponent implements OnInit {
   public questionList: any = [];
   public currentIndex: number = 0;
   public points: number = 0;
-  public counter = 60;
+  public timeLeft = 60;
+  public correctAnswer = 0;
+  public  interval : any;
 
   constructor(private QuestionService: QuestionService) {}
 
   ngOnInit(): void {
     this.pseudo = localStorage.getItem("pseudo")!;
     this.getAllQuestions();
+    this.startTimer();
   }
 
   getAllQuestions() {
@@ -27,9 +31,37 @@ export class QuestionComponent implements OnInit {
   }
 
   skipQuestion() {
-    if(this.currentIndex == this.questionList.length){
-      alert("outOfbound");
+    if(this.currentIndex == this.questionList.length -1 ){
+      alert("Correct Answer " + this.correctAnswer );
+      this.pauseTimer();
+
+    }else{
+      this.currentIndex = this.currentIndex + 1;
     }
-    this.currentIndex = this.currentIndex + 1;
+   
+  
+  }
+
+  reponse(questionIndex :number , option : any){
+    if(option.bonneReponse) {
+      this.points += 10;
+      this.correctAnswer++;
+    }
+    this.skipQuestion();
+
+  }
+
+  startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+      }
+    },1000)
+  }
+
+  pauseTimer() {
+    clearInterval(this.interval);
   }
 }
