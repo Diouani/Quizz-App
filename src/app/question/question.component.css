@@ -1,0 +1,23 @@
+li {
+    margin: 1%;
+    width: 40%;
+    text-align: center;
+    cursor: pointer;
+}
+
+ol{
+    list-style: none;
+}
+
+ol>li>.card {
+    height: 12vh;
+    display: flex;
+justify-content: center;
+   
+
+}
+
+li .card:hover{
+    border: 1px solid red;
+}
+

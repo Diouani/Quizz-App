@@ -3,14 +3,14 @@
   <p class="col-md-8 fs-4">Quizz description</p>
   <h4>Regles :</h4>
   <ol>
-    <li>Chaque question vaut 10 points</li>
+    <li>Chaque question vaut 1 point</li>
   </ol>
 
   <div class="name col-md-4 my-3">
     <label for="">Entrez votre pseudo</label>
-    <input type="text" name="" class="form-control" />
+    <input #pseudo type="text" name="" class="form-control" />
   </div>
-  <button class="btn btn-primary" routerLink="/question">
+  <button class="btn btn-primary" routerLink="/question" (click)="startQuizz()">
     Commencer le quizz
   </button>
 </div>

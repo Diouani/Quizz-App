@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "question": "Question 1",
+      "options": [
+        {
+          "reponse": "reponse 1",
+          "bonneReponse": true
+        },
+        {
+          "reponse": "reponse 2"
+        },
+        { "reponse": "reponse 3" },
+        {
+          "reponse": "reponse 4"
+        }
+      ]
+    },
+
+    {
+      "question": "Question 2",
+      "options": [
+        {
+          "reponse": "reponse 1"
+        },
+        {
+          "reponse": "reponse 2",
+          "bonneReponse": true
+        },
+        { "reponse": "reponse 3" },
+        {
+          "reponse": "reponse 4"
+        }
+      ]
+    },
+    {
+      "question": "Question 3",
+      "options": [
+        {
+          "reponse": "reponse 1"
+        },
+        {
+          "reponse": "reponse 2"
+        },
+        { "reponse": "reponse 3", "bonneReponse": true },
+        {
+          "reponse": "reponse 4"
+        }
+      ]
+    }
+  ]
+}
